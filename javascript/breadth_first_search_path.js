@@ -25,4 +25,12 @@ const bfs = (graph, root, matchFn) => {
 	return [];
 }
 
-// exampleGraph = graph = {'dan': ['tom'], 'tom': ['kevin', 'kelly'], 'kelly': ['tiff'], 'kevin': ['kelly', 'tiff'], 'tiff': ['dan'], 'carl': ['tiff']}
+// graph = {'dan': ['tom'], 'tom': ['kevin', 'kelly'], 'kelly': ['tiff'], 'kevin': ['kelly', 'tiff'], 'tiff': ['dan'], 'carl': ['tiff']}
+// > bfs(graph, 'dan', (x) => x === 'carl')
+// < []
+//
+// > bfs(graph, 'dan', (x) => x === 'kelly')
+// < ["dan", "tom", "kelly"]
+//
+// > bfs(graph, 'carl', (x) => x === 'kelly')
+// < ["carl", "tiff", "dan", "tom", "kelly"]
